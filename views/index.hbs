@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Linkedin</title>
+
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="shortcut icon" type="image/png" href="/images/favicon.ico" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/mediaQueries.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header id="main-header" style="height: 70px;">
+            <div>
+                <div>
+                    <img
+                        id="header-logo"
+                        src="/images/linkedin.png"
+                        alt="LinkedIn"
+                    />
+                    <img
+                        id="header-picture-menu"
+                        src="/images/picture.jpeg"
+                        alt="Profile picture"
+                    />
+                    <span id="header-picture-menu-bars">
+                        <span class="fas fa-bars"></span>
+                    </span>
+
+                    <div>
+                        <input
+                            id="search"
+                            type="text"
+                            placeholder="       Search"
+                            onfocus="toggleSearchInput()"
+                            onblur="toggleSearchInput()"
+                        />
+                        <span id="search-icon" class="fas fa-search"></span>
+                        <span id="search-button" class="fas fa-search"></span>
+                    </div>
+                    <span class="fas fa-comments"></span>
+                </div>
+                <nav>
+                    <ul>
+                        <li>
+                            <div id="home" class="selected" style="margin-bottom: 0;">
+                                <span class="fas fa-home"></span>
+                                <span class="nav-item-text">Home</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="fas fa-user-friends"></span>
+                                <span class="nav-item-text">My Network</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="fas fa-suitcase"></span>
+                                <span class="nav-item-text">Jobs</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="fas fa-envelope"></span>
+                                <span class="nav-item-text">Messaging</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="fas fa-bell"></span>
+                                <span class="nav-item-text">Notifications</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div id="right-border">
+                                <img
+                                    src="https://img.freepik.com/free-vector/flat-befana-illustration_23-2149195523.jpg?w=740&t=st=1672756936~exp=1672757536~hmac=5d4d60bfdd9ad50d5c097bf2f744960f655b28d1d3c39f88d9720b3135217798"
+                                    alt="Profile picture"
+                                />
+
+                                <span class="nav-item-text">
+                                    Me<span class="fas fa-caret-down"> </span
+                                ></span>
+                            </div>
+                        </li>
+                        
+                        
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- LOADING PAGE -->
+        <div id="loading-page">
+            <div>
+                <img src="/images/linkedin.png" alt="" />
+                <div id="dot-loader">
+                    <div class="lds-ellipsis">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div id="main-wrapper">
+                <main id="main-section">
+                    <div id="share-box">
+                        <div id="button-box">
+                            <button id="btn-post">
+                                <span class="fas fa-edit"></span>
+                                <span id="btn-text">Start a post</span>
+                            </button>
+                            <button id="btn-picture">
+                                <span class="fas fa-camera"></span>
+                            </button>
+                            <button id="btn-document">
+                                <span class="fas fa-file"></span>
+                            </button>
+                        </div>
+                        <div id="link-box">
+                            <a href="/post">Write an article</a>
+                            <span>on LinkedIn</span>
+                        </div>
+                    </div>
+                    <div id="feed-sort">
+                        <hr />
+                        <button>
+                            <span>Sort by:</span>
+                            <strong>Top</strong>
+                            <span class="fas fa-sort-down"></span>
+                        </button>
+                    </div>
+
+                    {{#if data}}
+                    <div>
+                        {{#each data}}
+                    <article>
+                        <div id="post-author">
+                            <a href="#">
+                                <div>
+                                    <img
+                                        src="https://img.freepik.com/free-vector/flat-befana-illustration_23-2149195523.jpg?w=740&t=st=1672756936~exp=1672757536~hmac=5d4d60bfdd9ad50d5c097bf2f744960f655b28d1d3c39f88d9720b3135217798"
+                                        alt=""
+                                    />
+                                    <div>
+                                        <div>
+                                            <strong id="post-author-name"
+                                                >Deepak Yadav</strong
+                                            >
+                                            <span>
+                                                <span>&nbsp;·&nbsp;</span>
+                                                1st</span
+                                            >
+                                        </div>
+                                        <span
+                                            >Student at NIT Jalandhar</span
+                                        >
+                                        <span>12h</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class = "dropdown">
+                                <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  
+                                </div>
+
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" id = {{this._id}}  href="#" onclick="handleSave(this.id)"><i class="fas fa-save"></i>&nbsp;  Save</a>
+
+                                    <a class="dropdown-item" href="#" id = {{this._id}} onclick="handleDelete(this.id)"><i class="fa-light fa-trash"></i> &nbsp;  Delete</a>
+
+                                    <a class="dropdown-item" href="#" id = {{this._id}} onclick="handleReport(this.id)"><i class="fa-regular fa-flag"></i> &nbsp; Report</a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div id="post-data">
+                            <p>
+                                {{this.text}}
+                            </p>
+                            <p id="post-translation">
+                                <button>See translation</button>
+                            </p>
+                            <img src={{this.photo}} alt="" />
+                        </div>
+                        <div id="post-interactions">
+                            <div id="interactions-amount">
+                                <span
+                                    id="like-icon"
+                                    class="fas fa-thumbs-up fa-flip-horizontal"
+                                ></span>
+                
+                                <span id="amount-info"
+                                    >{{this.post_stat.likes}}<span>&nbsp;.&nbsp;</span>{{this.post_stat.comments.length}}
+Comments</span
+                                >
+                            </div>
+                            <div id="interactions-btns">
+                                <button id="id_{{this._id}}" onclick="change(this.id)" >
+                                    <span
+                                        class="fa-regular fa-thumbs-up" id="likeme_change_{{this._id}}">
+                                        
+                                    </span>
+                                    <span>Like</span>
+                                </button>
+                                <button data-toggle="modal" data-target="#exampleModal{{this._id}}">
+                                    <span
+                                        class="far fa-comment-dots fa-flip-horizontal"
+                                    ></span>
+                                    <span>Comment</span>
+                                </button>
+                                <button id = {{this._id}} onclick="buttonclicked(this.id)">
+                                    <span class="far fa-share-square"></span>
+                                    <span>Share</span>
+                                </button>
+                            </div>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal{{this._id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Comments</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <ul class="list-unstyled">
+
+                                    {{#each post_stat.comments}}
+                                          <li style="margin-top: 8px;">{{this}}</li>
+                                    
+                                    {{/each}}
+
+                                    </ul>
+
+                                    <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder="Add Comment" 
+                                            id = "user_comment_{{this._id}}" 
+                                            aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-success" id = {{this._id}} type="button" onclick="postComment(this.id)">Post</button>
+                                            </div>
+                                    </div>
+                                   
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                
+                                </div>
+                            </div>
+                            </div>
+
+                        </div>
+                    </article>
+                       {{/each}}
+                    </div>
+                    
+
+                    {{else}}
+                    <div>
+                         <h4 style="text-align: center;">No post currently present!</h4>
+                    </div>
+                       
+                    {{/if}}
+                    
+                </main>
+            </div>
+        </div>
+    </body>
+
+    <script src="/js/script.js"></script>
+    <script src="https://kit.fontawesome.com/3055f91a99.js"></script>
+    <script src="/js/share.js"></script>
+   <script src="/js/handleFunctionality.js"></script>
+   <script src="/js/likes.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>
